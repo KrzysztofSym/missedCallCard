@@ -1,0 +1,267 @@
+/* Add CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/*===== VARIABLES CSS =====*/
+
+:root {
+    --h1-fs: 2rem;    --h1-fs-media: 3rem; 
+    --h2-fs: 1.5rem;  --h2-fs-media: 2rem;
+    --h3-fs: 1.3rem;  --h3-fs-media: 1.8rem;
+    --h4-fs: 1.1rem;  --h4-fs-media: 1.5rem;
+    --p-fs: .8rem;    --p-fs-media: 1.1rem;
+    --a-fs: .7rem;    --a-fs-media: 1.1rem;
+    --li-fs: .7rem;   --li-fs-media: 1.1rem;    
+
+    --clr-bg-main: #a0c9f8;
+    --clr-bg-pri: #121637;
+    --clr-bg-sec: #b4d4fb;
+    --clr-acc-main: #1da270;
+    --clr-acc-pri: #4393f5;
+    --clr-acc-sec:  #3676c4;
+    --clr-acc-thi: #16825a;
+    --clr-acc-four: #ad0000;
+    --clr-acc-fif: #e54c43;
+    --clr-text-main: #67696a;
+    --clr-text-pri: #36454F;  
+    
+    --shadow-color: #33cbb8;    
+    --main-ff: 'Poppins', sans-serif;
+  }
+
+/*===== BASE =====*/
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-ff);
+    font-size: var(--p-fs);
+    /* background: var(--clr-bg-main); */
+    background-image: url('https://r4.wallpaperflare.com/wallpaper/489/585/153/letter-message-the-envelope-wallpaper-d33d799cf5caeca652c2bbaec18f1ca0.jpg');
+    /* background-image: url('https://c1.wallpaperflare.com/preview/670/336/847/phone-booth-light-urban.jpg'); */
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    width: 100%;
+    min-height: 100vh;
+}   
+
+h1, h2, h3, h4,
+p, a, li {
+    margin: 0;
+}
+
+h1 {font-size: var(--h1-fs);}
+h2 {font-size: var(--h2-fs);}
+h3 {font-size: var(--h3-fs);}
+h4 {font-size: var(--h4-fs);}
+
+p, a, li {font-size: var(--p-fs);}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-text-main);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+
+    }
+}
+    /* animation: scaleUp 1s ease-in-out;
+    transform-origin: center center; */
+
+/*===== BUTTONS =====*/
+
+.btn {
+    display: inline-block;
+    background-color:  var(--clr-acc-pri);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .2s;
+}
+
+.btn:last-of-type {
+    background-color: var(--clr-acc-main);
+    color: #fff;
+}
+  
+.btn:first-of-type:hover {
+    background-color: var(--clr-acc-sec);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+}
+
+.btn:last-of-type:hover {
+    background-color: var(--clr-acc-thi);
+}
+
+.btn:active {
+    scale: .97;
+}
+
+/*===== PROJECT CSS =====*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    background: rgba( 18, 22, 55, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    position: relative;
+    padding: 1.5rem;
+    animation: scaleUp 1s ease-in-out;
+    transform-origin: center center;
+    transition: .3s;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header svg {
+    width: 1.5rem;
+    margin-right: .5rem;
+    fill: var(--clr-acc-fif);
+}
+
+.call {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transform: translateY(-15px) scale(0);
+    opacity: 0;
+    transition: .3s;
+}
+
+.call.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+header i {
+    font-size: 1.5rem;
+    margin-left: auto;
+    cursor: pointer;
+    transition: .2s;
+}
+
+header i:hover {
+    transform: rotate(90deg);
+}
+
+main {
+    padding: 1rem;
+}
+
+.user {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.user img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 5px solid var(--clr-acc-pri);
+    object-fit: cover;
+}
+
+.inf.active {
+    top: 0;
+    bottom: 0;
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.inf.active:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    right: 50%;
+    transform: translate(60%, 0) scale(1);
+
+}
+
+.inf {
+    position: absolute;
+    right:0;
+    top:0;
+    bottom: 0;
+    transform: translateY(-15px) scale(0);
+    transition: .3s;
+    opacity: 0;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+.message textarea {
+    width: 14rem;
+    padding: .5rem;
+    background: transparent;
+    border: 5px solid var(--clr-acc-pri);
+    resize: none;
+    border-radius: 1rem;
+    color: white;
+    outline: none;
+}
+
+.btns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 0 0;
+    gap: .5rem;
+}
+
+.btn i {
+    margin-right: .3rem;
+    transition: .3s;
+}
+
+.btn:hover i {
+    transform: rotate(-10deg);
+}
